@@ -13,7 +13,7 @@ body {
   background-color: black;
 }
 
-.countdown {
+div#rickrolld.countdown {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   background-image: url('stone.png');
@@ -29,12 +29,14 @@ div#rickrolld.countdown h1 {
 
 div#rickrolld.countdown h1::before {
   -moz-animation-duration: 10s;
+  -moz-animation-name: countdown;
   -ms-animation-duration: 10s;
   -ms-animation-name: countdown;
-  -moz-animation-name: countdown;
   -webkit-animation-duration: 10s;
   -webkit-animation-name: countdown;
-  animation-duration: 10s;
+  -o-animation-duration: 10s;
+  -o-animation-name: countdown;
+  animation-duration: 5s;
   animation-name: countdown;
   content: '0';
 }
@@ -65,7 +67,15 @@ div#rickrolld.countdown h1::before {
   }
 }
 
-input#link {
+p#info {
+  display: none;
+}
+
+p#info.show {
+  display: block;
+}
+
+p#info input#link {
   width: 512px;
 }
     </style>
@@ -73,16 +83,18 @@ input#link {
 function rickrolld() {
   document.getElementById('rickrolld').innerHTML = '<iframe width="960" height="720" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=true" frameborder="0" allowfullscreen />';
   document.getElementById('link').value = window.location.href;
-  document.getElementById('info').style.display = 'block';
+  window.setTimeout(function() {
+    document.getElementById('info').classList.add('show');
+  }, 1500);
 }
     </script>
   </head>
-  <body onload="window.setTimeout(rickrolld, 10000)">
+  <body onload="window.setTimeout(rickrolld, 5000)">
     It's coming&hellip;<br/>
     <div class="countdown" id="rickrolld">
       <h1></h1>
     </div>
-    <p id="info" style="display: none">
+    <p id="info">
       You just got Rickroll'd! :P<br />
       USE THIS LINK WHEN IN DIRE NEED:<br />
       <input id="link" type="text"/><br />
