@@ -3,7 +3,6 @@
   <head>
     <title>Yroo xrskvi girzmtov</title>
     <meta name="rickrolld" content="yes">
-    <meta http-equiv="refresh" content="10; http://youtu.be/dQw4w9WgXcQ/">
     <style>
 body {
   font-family: sans-serif;
@@ -24,11 +23,11 @@ body {
   color: red;
 }
 
-.countdown h1 {
+div#rickrolld.countdown h1 {
   font-size: 20em;
 }
 
-.countdown h1::before {
+div#rickrolld.countdown h1::before {
   -moz-animation-duration: 10s;
   -ms-animation-duration: 10s;
   -ms-animation-name: countdown;
@@ -65,12 +64,29 @@ body {
     content: '0';
   }
 }
+
+input#link {
+  width: 512px;
+}
     </style>
+    <script>
+function rickrolld() {
+  document.getElementById('rickrolld').innerHTML = '<iframe width="960" height="720" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=true" frameborder="0" allowfullscreen />';
+  document.getElementById('link').value = window.location.href;
+  document.getElementById('info').style.display = 'block';
+}
+    </script>
   </head>
-  <body>
+  <body onload="window.setTimeout(rickrolld, 10000)">
     It's coming&hellip;<br/>
-    <div class="countdown">
+    <div class="countdown" id="rickrolld">
       <h1></h1>
     </div>
+    <p id="info" style="display: none">
+      You just got Rickroll'd! :P<br />
+      USE THIS LINK WHEN IN DIRE NEED:<br />
+      <input id="link" type="text"/><br />
+      HAVE FUN!
+    </p>
   </body>
 </html>
