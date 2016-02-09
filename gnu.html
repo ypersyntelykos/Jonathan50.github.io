@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>What's GNU?</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+    <meta charset="UTF-8">
+ </head>
+  <body>
+    <span id="acronym">GNU is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX is not UNIX&hellip;</span>
+    <button id="more">Load more...</button>
+     <script>
+      function more() {
+        var acronym = document.getElementById('acronym');
+	var text = acronym.textContent;
+	acronym.innerHTML = text.substring(0, text.length - 1) +
+	       ' is not UNIX'.repeat(20) + '…';
+      }
+
+      document.getElementById('more').onclick = more;
+    </script>
+  </body>
+</html>
