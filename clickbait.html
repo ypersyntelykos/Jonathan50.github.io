@@ -9,6 +9,7 @@
         let text = clickbait()
         document.querySelector('title').textContent = text
         document.querySelector('#text').textContent = text
+        speechSynthesis.speak(new SpeechSynthesisUtterance(text))
       }
     </script>
     <style>
