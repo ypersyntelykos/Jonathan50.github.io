@@ -5,9 +5,11 @@
     <title></title>
     <script type="application/javascript" src="https://gist.githubusercontent.com/Jonathan50/87523d7ea2cb34dd3bf31f087f180983/raw/9416a13b5bce2e7266f8428d9f358f930d9e034d/clickbait.js"></script>
     <script>
-      let text = clickbait()
-      document.querySelector('title').textContent = text
-      document.querySelector('#text').textContent = text
+      function onload() {
+        let text = clickbait()
+        document.querySelector('title').textContent = text
+        document.querySelector('#text').textContent = text
+      }
     </script>
   </head>
   <body onload="onload()">
