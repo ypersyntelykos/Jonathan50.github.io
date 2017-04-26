@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <span id="focused"></span>
+    <script>
+      var span = document.querySelector("span#focused");
+      function test() {
+        if (document.hasFocus()) {
+          span.innerText = "Focused!";
+        } else {
+          span.innerText = "Not focused!";
+        }
+      }
+      setInterval(test, 200);
+    </script>
+  </body>
+</html>
